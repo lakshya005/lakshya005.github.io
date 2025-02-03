@@ -83,7 +83,6 @@ svg,img { max-width: 100%; height: auto; }
 .ds-projects-section {
 	padding: 6.5rem 0;
 	background-color: #2A2A2A;
-	/* Match the dark theme */
 }
 
 .ds-projects-section h2 {
@@ -91,7 +90,6 @@ svg,img { max-width: 100%; height: auto; }
 	line-height: 3.375rem;
 	margin-bottom: 3rem;
 	text-align: center;
-	/* Center the heading */
 }
 
 .ds-projects-section h2 span {
@@ -107,35 +105,62 @@ svg,img { max-width: 100%; height: auto; }
 
 .ds-projects-listing-section {
 	margin-top: 5rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	/* Add gap between project cards */
+	justify-content: center;
+	/* Center the cards horizontally */
 }
 
 .ds-projects-loop {
 	margin-bottom: 2rem;
+	background-color: #1E1E1E;
+	/* Darker background for cards */
+	border-radius: 10px;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	flex: 1 1 calc(33.333% - 2rem);
+	/* Adjust width to account for the gap */
+	max-width: calc(33.333% - 2rem);
+	/* Ensure cards don't exceed the width */
+	box-sizing: border-box;
+	/* Include padding and border in the element's total width and height */
+}
+
+.ds-projects-loop:hover {
+	transform: translateY(-10px);
+	/* Lift card on hover */
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+	/* Add shadow on hover */
 }
 
 .ds-projects-loop figure {
 	position: relative;
 	margin-bottom: 2.5rem;
+	/* Add space between image and project name */
 }
 
 .ds-projects-loop figure img {
 	width: 100%;
 	height: auto;
-	border-radius: 10px;
+	border-radius: 10px 10px 0 0;
+	/* Rounded corners only at the top */
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ds-projects-loop figure img:hover {
-	transform: translateY(-5px);
-	/* Lift image on hover */
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-	/* Add shadow on hover */
+	transform: scale(1.05);
+	/* Slight zoom effect on hover */
 }
 
 .ds-projects-loop section {
-	text-align: center;
-	padding-top: 1.5rem;
-	/* Center the text */
+	text-align: left;
+	/* Align text to the left */
+	padding: 0 1.5rem 1.5rem;
+	/* Add padding inside the card */
+	background-color: #1E1E1E;
+	/* Match card background */
 }
 
 .ds-projects-loop section h3 {
@@ -144,12 +169,49 @@ svg,img { max-width: 100%; height: auto; }
 	font-size: 1.5rem;
 	color: #FFF;
 	margin-bottom: 0.75rem;
+	/* Space between title and description */
 }
 
 .ds-projects-loop section span {
 	font-size: 1rem;
 	color: #9C9C9C;
 	font-weight: 400;
+	display: block;
+	margin-bottom: 1.5rem;
+	/* Space between description and dropdown */
+}
+
+.ds-project-details {
+	text-align: left;
+	color: #9C9C9C;
+	max-height: 0;
+	/* Initially hidden */
+	overflow: hidden;
+	transition: max-height 0.5s ease, padding 0.5s ease;
+	/* Smooth transition */
+}
+
+.ds-projects-loop:hover .ds-project-details {
+	max-height: 500px;
+	/* Adjust based on content height */
+	padding-top: 1rem;
+	/* Add padding when visible */
+}
+
+.ds-project-details p {
+	margin: 0.5rem 0;
+	font-size: 0.9rem;
+}
+
+.ds-project-details ul {
+	list-style-type: disc;
+	padding-left: 1.5rem;
+	margin: 0.5rem 0;
+}
+
+.ds-project-details ul li {
+	margin-bottom: 0.5rem;
+	font-size: 0.9rem;
 }
 
 .ds-link-button {
@@ -166,12 +228,14 @@ svg,img { max-width: 100%; height: auto; }
 	color: #CBFE00;
 	font-size: 1.25rem;
 	opacity: 0;
-	transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .ds-projects-loop:hover .ds-link-button {
 	opacity: 1;
 	/* Show link button on hover */
+	transform: scale(1.1);
+	/* Slight zoom effect on hover */
 }
 /*-----------------------------------------------------------------
   5. >>> Testimonials Style
