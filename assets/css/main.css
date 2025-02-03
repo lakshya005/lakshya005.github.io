@@ -2721,6 +2721,47 @@ svg,img { max-width: 100%; height: auto; }
 	transform: scale(1.1);
 	/* Slight zoom effect on hover */
 }
+/* Projects Section - Mobile Responsiveness */
+@media (max-width: 767.98px) {
+	.ds-projects-listing-section {
+		flex-direction: column;
+		/* Stack cards vertically on mobile */
+		gap: 2rem;
+		/* Add space between stacked cards */
+	}
+
+	.ds-projects-loop {
+		flex: 1 1 100%;
+		/* Make each card take full width on mobile */
+		max-width: 100%;
+		/* Ensure cards don't exceed the container width */
+	}
+
+	.ds-projects-loop figure img {
+		border-radius: 10px;
+		/* Ensure rounded corners on mobile */
+	}
+
+	.ds-projects-loop section {
+		padding: 1.5rem;
+		/* Add padding for better spacing on mobile */
+	}
+
+	.ds-projects-loop section h3 {
+		font-size: 1.25rem;
+		/* Slightly smaller font size for mobile */
+	}
+
+	.ds-projects-loop section span {
+		font-size: 0.9rem;
+		/* Slightly smaller font size for mobile */
+	}
+
+	.ds-project-details {
+		max-height: 500px;
+		/* Ensure dropdown works smoothly on mobile */
+	}
+}
 /*-----------------------------------------------------------------
   5. >>> Testimonials Style
 ----------------------------------------------------------------*/
